@@ -1,5 +1,0 @@
-# základní docker obraz
-FROM mysql
-
-# inicializace databáze
-ADD ./Dockerfiles/albion.sql /docker-entrypoint-initdb.d
