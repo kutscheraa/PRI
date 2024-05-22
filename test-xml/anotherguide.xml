@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <guide author="Martin Kučera">
     <header>
-        <title>Healer build (holy staff)</title>
-        <category>Crystal arena</category>
+        <title>Axe</title>
+        <category>Fame farming</category>
         <difficulty>
-            <Pro />
+            <Beginner />
         </difficulty>
     </header>
     <gear>
@@ -16,32 +16,27 @@
         <gear_piece
             type='chest'
             tier='4.2'>
-            Cleric robe
+            Mercenary jacket
         </gear_piece>
         <gear_piece
             type='boots'
             tier='4.2'>
-            Cleric sandals
+            Soldier boots
         </gear_piece>
         <gear_piece
             type='weapon'
-            tier='4.2'>
-            Holy staff
-        </gear_piece>
-        <gear_piece
-            type='off-hand'
-            tier='5'>
-            Mistcaller
+            tier='6'>
+            Great axe
         </gear_piece>
         <gear_piece
             type='cape'
             tier='4.2'>
-            Personal preference
+            Thetford cape
         </gear_piece>
         <gear_piece
             type='food'
-            tier='7'>
-            Omelette
+            tier='8'>
+            Beef stew
         </gear_piece>
         <gear_piece
             type='potion'

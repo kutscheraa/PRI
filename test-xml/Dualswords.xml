@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<guide author="Martin Kučera">
+<guide author="někdo">
     <header>
         <title>Dual swords</title>
-        <category>Fame farming</category>
+        <category>Small scale PVP/PVE</category>
         <difficulty>
-            <Pro />
+            <Advanced />
         </difficulty>
     </header>
     <gear>
@@ -40,7 +40,7 @@
         </gear_piece>
         <gear_piece
             type='food'
-            tier='7'>
+            tier='8'>
             Beef stew
         </gear_piece>
         <gear_piece
