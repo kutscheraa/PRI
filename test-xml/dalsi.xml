@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guide author="Martin Kučera">
+    <header>
+        <title>randomrandomrandom</title>
+        <category>
+            <PVE />
+        </category>
+        <difficulty>
+            <Beginner />
+        </difficulty>
+    </header>
+    <gear>
+        <gear_piece
+            type='head'
+            tier='4.1'>
+            Scholar cowl
+        </gear_piece>
+        <gear_piece
+            type='chest'
+            tier='4.2'>
+            Mercenary jacket
+        </gear_piece>
+        <gear_piece
+            type='boots'
+            tier='4.2'>
+            Soldier boots
+        </gear_piece>
+        <gear_piece
+            type='weapon'
+            tier='6'>
+            Great axe
+        </gear_piece>
+        <gear_piece
+            type='cape'
+            tier='4.2'>
+            Thetford cape
+        </gear_piece>
+        <gear_piece
+            type='food'
+            tier='8'>
+            Beef stew
+        </gear_piece>
+        <gear_piece
+            type='potion'
+            tier='4'>
+            Poison potion
+        </gear_piece>
+    </gear>
+    <description>Nevim co sdasdsadsadsfgfegergergregersem napsat, tak sem něco píšu.</description>
+</guide>

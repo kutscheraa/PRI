@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- simple elements -->
+    <xs:element name="title" type="xs:string" />
+    <xs:element name="description" type="xs:string" />
+
+    <!-- category element -->
+    <xs:element name="category">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="PVP" />
+                <xs:element name="PVE" />
+                <xs:element name="Arena" />
+                <xs:element name="Gathering" />
+                <xs:element name="Other" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- difficulty element -->
+    <xs:element name="difficulty">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="Beginner" />
+                <xs:element name="Advanced" />
+                <xs:element name="Pro" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- gear piece type attribute -->
+    <xs:simpleType name="gearTypeAttr">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="head" />
+            <xs:enumeration value="chest" />
+            <xs:enumeration value="boots" />
+            <xs:enumeration value="weapon" />
+            <xs:enumeration value="off-hand" />
+            <xs:enumeration value="cape" />
+            <xs:enumeration value="food" />
+            <xs:enumeration value="potion" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- attributes -->
+    <xs:attribute name="author" type="xs:string" />
+    <xs:attribute name="rating" type="xs:positiveInteger" fixed="1" />
+    <xs:attribute name="number_of_ratings" type="xs:decimal" fixed="0" />
+    <xs:attribute name="tier" type="xs:string" default="4" />
+    <xs:attribute name="type" type="gearTypeAttr" />
+
+    <!-- guide element -->
+    <xs:element name="guide">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="header" type="headerType" />
+                <xs:element name="gear" type="gearListType" />
+                <xs:element name="description" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="author" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- header element -->
+    <xs:complexType name="headerType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="category" type="categoryType" minOccurs="0" />
+            <xs:element name="difficulty" type="difficultyType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- difficulty complex type -->
+    <xs:complexType name="difficultyType">
+        <xs:choice>
+            <xs:element name="Beginner" />
+            <xs:element name="Advanced" />
+            <xs:element name="Pro" />
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- category complex type -->
+    <xs:complexType name="categoryType">
+        <xs:choice>
+            <xs:element name="Arena" />
+            <xs:element name="PVP" />
+            <xs:element name="PVE" />
+            <xs:element name="Gathering" />
+            <xs:element name="Other" />
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- gear element -->
+    <xs:complexType name="gearListType">
+        <xs:sequence>
+            <xs:element name="gear_piece" type="gearPieceType" minOccurs="4" maxOccurs="8" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- gear_piece element -->
+    <xs:complexType name="gearPieceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="tier" type="xs:string" use="required" />
+                <xs:attribute name="type" type="gearTypeAttr" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>
