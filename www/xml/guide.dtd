@@ -1,0 +1,24 @@
+<!ELEMENT guide (header, gear, description)>
+<!ATTLIST guide
+    author CDATA #REQUIRED
+    rating CDATA #FIXED '1'
+    number_of_ratings CDATA #FIXED '0'>
+
+<!ELEMENT header (title, category, difficulty)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT category (#PCDATA)>
+
+<!ELEMENT difficulty (Beginner | Advanced | Pro)>
+<!ELEMENT Beginner EMPTY>
+<!ELEMENT Advanced EMPTY>
+<!ELEMENT Pro EMPTY>
+
+<!ELEMENT gear (gear_piece+)>
+<!ELEMENT gear_piece (#PCDATA)>
+<!ATTLIST gear_piece
+    type (head | chest | boots | weapon | off-hand | cape | food | potion) #REQUIRED
+    tier CDATA '4'>
+
+<!ELEMENT description (#PCDATA)>
