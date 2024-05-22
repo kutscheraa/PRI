@@ -1,3 +1,0 @@
-možnost formuláře k místo xml souboru
-filtry/vyhledávání/idk
-možnost editu guidy
