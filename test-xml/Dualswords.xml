@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <guide author="Martin Kučera">
     <header>
-        <title>Healer</title>
-        <category>Economy</category>
+        <title>Dual swords</title>
+        <category>Fame farming</category>
         <difficulty>
             <Pro />
         </difficulty>
@@ -11,42 +11,42 @@
         <gear_piece
             type='head'
             tier='4.1'>
-            Scholar cowl
+            Hunter hood
         </gear_piece>
         <gear_piece
             type='chest'
             tier='4.2'>
-            Cleric robe
+            Mercenary jacket
         </gear_piece>
         <gear_piece
             type='boots'
             tier='4.2'>
-            Cleric sandals
+            Soldier boots
         </gear_piece>
         <gear_piece
             type='weapon'
             tier='4.2'>
-            Holy staff
+            Dual swords
         </gear_piece>
         <gear_piece
             type='off-hand'
             tier='5'>
-            Mistcaller
+            Empty
         </gear_piece>
         <gear_piece
             type='cape'
             tier='4.2'>
-            Personal preference
+            Lymhurst cape
         </gear_piece>
         <gear_piece
             type='food'
             tier='7'>
-            Omelette
+            Beef stew
         </gear_piece>
         <gear_piece
             type='potion'
             tier='4'>
-            Poison potion
+            Resistance potion
         </gear_piece>
     </gear>
     <description>Nevim co sem napsat, tak sem něco píšu.</description>
