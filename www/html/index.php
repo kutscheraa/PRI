@@ -5,25 +5,20 @@ require INC . '/nav.php';
 ?>
 
 <style>
-  body {
-    background: #BA8B02;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #181818, #BA8B02);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #181818, #BA8B02); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
-  }
 
   p {
     margin-bottom: .6em;
   }
 </style>
 
+<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 <main class='pb-10 m-6 mt-48'>
-  <h1 class="pb-6 text-5xl font-semibold text-center text-white">
+  <h1 class="pb-6 text-7xl font-extralight text-center text-white">
     <?= TITLE ?>
   </h1>
 
   <p class='font-extralight text-center text-white'>
-    Upload your albion online gear guides
+    Create your albion online gear guides
   </p>
 
 </main>
