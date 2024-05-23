@@ -9,11 +9,52 @@ require INC . '/nav.php';
 <div class="min-h-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
     <div class="flex justify-center text-white py-10">
 
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // PHP code for form handling here
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $title = htmlspecialchars($_POST['title']);
+        $description = htmlspecialchars($_POST['description']);
+        $category = htmlspecialchars($_POST['category']);
+        $difficulty = htmlspecialchars($_POST['difficulty']);
+        $author = htmlspecialchars($_POST['author']);
+
+        $gear_pieces = $_POST['gear_pieces'];
+        $gear_tiers = $_POST['gear_tiers'];
+        $gear_types = $_POST['gear_types'];
+
+        $xml = new SimpleXMLElement('<guide></guide>');
+        $xml->addAttribute('author', $author);
+
+        $header = $xml->addChild('header');
+        $header->addChild('title', $title);
+
+        $categoryElement = $header->addChild('category');
+        $categoryElement->addChild($category);
+
+        $difficultyElement = $header->addChild('difficulty');
+        $difficultyElement->addChild($difficulty);
+
+        $gear = $xml->addChild('gear');
+
+        for ($i = 0; $i < count($gear_pieces); $i++) {
+            $gear_piece = $gear->addChild('gear_piece', htmlspecialchars($gear_pieces[$i]));
+            $gear_piece->addAttribute('tier', htmlspecialchars($gear_tiers[$i]));
+            $gear_piece->addAttribute('type', htmlspecialchars($gear_types[$i]));
         }
-        ?>
+
+        $xml->addChild('description', $description);
+
+        // Create a sanitized file name
+        $fileName = preg_replace('/[^a-z0-9]+/', '_', strtolower($title)) . '.xml';
+        $filePath = '/var/albion/guides/' . $fileName;
+
+        // Save the XML to a file
+        if ($xml->asXML($filePath)) {
+            successBox("Guide created.");
+        } else {
+            errorBox("Failed to create guide.");
+        }
+    }
+    ?>
 
         <div class='shadow-2xl rounded-xl ring-1 ring-white ring-opacity-50 mt-10 font-extralight bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] p-8'>
             <h1 class='text-white text-2xl mb-4 text-center'>Create New Guide</h1>
@@ -120,3 +161,4 @@ require INC . '/nav.php';
     }
 </script>
 <?php require INC . '/html-end.php'; ?>
+
